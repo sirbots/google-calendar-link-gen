@@ -19,6 +19,10 @@ router.get('/', function(req, res, next) {
   res.render('pages/home', { title: 'Google Calendar Event Link Generator', layout: '/layouts/layout.hbs' });
 });
 
+/* GET homepage NEW STYLE */
+router.get('/home2', function(req, res, next) {
+  res.render('pages/home2', { title: 'REDESIGN', layout: '/layouts/layout.hbs' });
+});
 
 
 
