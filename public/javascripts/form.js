@@ -9,7 +9,9 @@
 
               // convert GMT to local time
               var localTime = new Date();
-              var timeDiff = localTime.getTimezoneOffset() / 60 * 100;
+              
+              var timeDiff = ( localTime.getTimezoneOffset() / 60 * 100 ) + 100; // For some reason, it was breaking without adding 100 to the offset. That was happening in October, before DST ended.
+
               var adjStartTimeRaw = parseInt(startTimeClean) + timeDiff;
               var adjEndTimeRaw = parseInt(endTimeClean) + timeDiff;
               var adjStartTimeClean = adjStartTimeRaw;
@@ -84,6 +86,6 @@
             text_input.select ();
 
             // copying the text with a button click
-            var clipboard = new Clipboard('.copy-button');
+            var clipboard = new Clipboard('.btn-copy');
 
           }

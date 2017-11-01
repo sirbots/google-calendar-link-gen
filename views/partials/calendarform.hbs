@@ -1,6 +1,9 @@
-<form NAME="calendarInput" ACTION="" METHOD="GET">
-          <h4><span class="label label-default">Event Name*:</span>  <input TYPE="text" NAME="eventName" VALUE="Event Name"></h4>
-          <h4><span class="label label-default">Date*:</span> <select name="eventMonth">
+
+<form NAME="calendarInput" ACTION="" METHOD="GET" class="form">
+          <span class="label label-name">Event Name:</span> 
+             <input type="text" NAME="eventName" VALUE="Event Name">
+             <br />
+          <span class="label label-date">Date:</span> <select class="dropdown" name="eventMonth">
             <option value="01">January</option>
             <option value="02">February</option>
             <option value="03">March</option>
@@ -14,7 +17,7 @@
             <option value="11">November</option>
             <option value="12">December</option>
           </select>
-          <select name="eventDay">
+          <select name="eventDay" class="dropdown">
             <option value="01">1</option>
             <option value="02">2</option>
             <option value="03">3</option>
@@ -47,35 +50,32 @@
             <option value="30">30</option>
             <option value="31">31</option>
           </select>
-          <select name="eventYear">
+          <select name="eventYear" class="dropdown">
             <option value="2017">2017</option>
             <option value="2018">2018</option>
             <option value="2019">2019</option>
             <option value="2020">2020</option>
             <option value="2020">2021</option>
             <option value="2020">2022</option>
-          </select></h4>
-          <h4><span class="label label-default">Event Time*:</span>
-          <input id="startTime" name="eventStartTime" type="time" required="true" value="19:00">
+          </select>
+          <br />
+          <span class="label label-time">Event Time:</span>
+          <input class="time" id="startTime" name="eventStartTime" type="time" required="true" value="19:00">
           to
-          <input id="endTime" name="eventEndTime" type="time" value="20:00" required="true"><br>
-          <span class="label label-default">All day?</span> 
+          <input class="time" id="endTime" name="eventEndTime" type="time" value="20:00" required="true">
+          <br />
+          <span class="label label-day">All day?</span> 
           <input type="checkbox" id="allDay" value="1">
+          <br />
           
-          </h4>
-		  <h4><span class="label label-default">Event Location:</span>
-          <input name="eventLocation"></h4>
+		      <span class="label label-location">Event Location:</span>
+          <input type="text" name="eventLocation">
 
-		  <h4><span class="label label-default">Event Description:</span><br><br>
-          <textarea name="eventDetails" cols="36" rows="5"></textarea></h4>
+          <br />
+		      <span class="label label-description">Event Description:</span><br />
+          <textarea class="box" name="eventDetails" cols="35" rows="5"></textarea>
 
-
-          <input TYPE="button" NAME="button1" Value="Create Link" class="btn btn-sm btn-success" onClick="writeText(this.form)">
-          <br><br>
-          <!-- output GCal link -->
-          <h4>Google Calendar Link</h4>
-          <textarea id="outputBox" type="text" name="gCalOutput" readonly cols="40" rows="5"></textarea><br>
-
-          <button type="button" class="copy-button btn btn-sm btn-primary" data-clipboard-action="copy" data-clipboard-target="#outputBox">Copy</button>
-
-          </form>
+          <br />
+          <div class="btn-container">
+          <button type="button" class="btn btn-create" onClick="writeText(this.form)">Create Link</button>
+          </div>
