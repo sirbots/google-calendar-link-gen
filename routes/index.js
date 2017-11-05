@@ -19,8 +19,4 @@ router.get('/', function(req, res, next) {
   res.render('pages/home', { title: 'Google Calendar Event Link Generator', layout: '/layouts/layout.hbs' });
 });
 
-
-
-
-
 module.exports = router;
