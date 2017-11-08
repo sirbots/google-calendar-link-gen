@@ -9,8 +9,20 @@
 
               // convert GMT to local time
               var localTime = new Date();
+            
+              // checks if user is currently in daylight savings time
+              function isDST(t) { //t is the date object to check, returns true if daylight saving time is in effect.
+                var jan = new Date(t.getFullYear(),0,1);
+                var jul = new Date(t.getFullYear(),6,1);
+                return Math.min(jan.getTimezoneOffset(),jul.getTimezoneOffset()) == t.getTimezoneOffset();  
+            }
+
+              var timeDiff = ( localTime.getTimezoneOffset() / 60 * 100 ); 
               
-              var timeDiff = ( localTime.getTimezoneOffset() / 60 * 100 ) + 100; // For some reason, it was breaking without adding 100 to the offset. That was happening in October, before DST ended.
+              // add 100 if user is in DST
+              if(isDST(localTime)) {
+                timeDiff += 100;
+            }
 
               var adjStartTimeRaw = parseInt(startTimeClean) + timeDiff;
               var adjEndTimeRaw = parseInt(endTimeClean) + timeDiff;
