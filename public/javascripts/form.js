@@ -93,13 +93,18 @@
       eventDetailsRaw = form.eventDetails.value;
       eventDetailsClean = eventDetailsRaw.replace(/\s/gi, "%20");
 
+
+      https://calendar.google.com/calendar/render?action=TEMPLATE
+      
+      &text=Coming%20to%20America&dates=20200101T250000Z/20200101T260000Z&details=undefined&location=America&trp=true
+
 			if (allDay.checked == 1) {
 			// outputs a link to the form field with full day event
 		    form.gCalOutput.value = "https://calendar.google.com/calendar/render?action=TEMPLATE&text=" + eventNameClean + "&dates=" + form.eventYear.value + form.eventMonth.value + day1 + "/" + form.eventYear.value + form.eventMonth.value + day2 + "&details=" + eventDetailsClean + "&location=" + form.eventLocation.value + "&trp=true";
 
 			} else {
 			// outputs a link to the form field with start and end time           
-		    form.gCalOutput.value = "https://calendar.google.com/calendar/render?action=TEMPLATE&text=" + eventNameClean + "&dates=" + form.eventYear.value + form.eventMonth.value + day1 + "T" + leadZero1 + adjStartTimeClean + "00Z/" + form.eventYear.value + form.eventMonth.value + day2 + "T" + leadZero2 + adjEndTimeClean + "00Z&details=" + form.eventDetailsClean + "&location=" + form.eventLocation.value + "&trp=true"; }
+		    form.gCalOutput.value = "https://calendar.google.com/calendar/render?action=TEMPLATE&text=" + eventNameClean + "&dates=" + form.eventYear.value + form.eventMonth.value + day1 + "T" + leadZero1 + adjStartTimeClean + "00Z/" + form.eventYear.value + form.eventMonth.value + day2 + "T" + leadZero2 + adjEndTimeClean + "00Z&details=" + eventDetailsClean + "&location=" + form.eventLocation.value + "&trp=true"; }
 		
             // select the outputted link
             var text_input = document.getElementById ('outputBox');
