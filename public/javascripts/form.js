@@ -19,10 +19,17 @@
 
               var timeDiff = ( localTime.getTimezoneOffset() / 60 * 100 ); 
               
+              
+              /*   
+              
+              Commented this out as the form was ahead by an hour once DST flipped in March 2021. Might be a change in Google's handling that obviates this code but I don't have enough time to really figure it out.
+
               // add 100 if user is in DST
               if(isDST(localTime)) {
                 timeDiff += 100;
-            }
+              } 
+              
+              */
 
               var adjStartTimeRaw = parseInt(startTimeClean) + timeDiff;
               var adjEndTimeRaw = parseInt(endTimeClean) + timeDiff;
