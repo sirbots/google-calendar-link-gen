@@ -1,0 +1,238 @@
+
+/* Imports. In production, you can move these back to main CSS file to save on requests */
+@import url(reset.css);
+
+
+/* GLOBAL STYLES */
+body {
+    font-family: 'Roboto', helvetica, sans-serif;  
+    font-size: 16px;
+    min-height: 100vh;
+    color: #000;
+}
+
+h1 {
+    font-family: 'Roboto Slab', serif;
+    font-size: 4vw;
+}
+
+h2 {
+    font-size: 1.7em;
+    text-align: center;
+}
+
+a {
+    border-bottom: 1px dotted;
+    color: #0965BB;
+    cursor: pointer;
+    text-decoration: none;
+}
+ 
+p {
+    line-height: 1.5;
+}
+
+
+/* HEADER STYLES */
+.header {
+    border-bottom: 1px dotted #CEA623;
+    background-size: cover;
+    box-sizing: border-box;
+    height: 14vh;
+}
+.header-content {
+    position: relative;
+    text-align: center;
+    top: 50%;
+    transform: translate(0, -50%);   
+}
+
+/* FOOTER STYLES */
+.footer {
+    margin-top: 6vh;
+}
+.footer-content {
+    border-top: 1px dotted #CEA623;
+    font-size: 0.8rem;
+    padding-top: 5vh;
+    position: relative;
+    transform: translate(0, -50%);   
+}
+
+
+/* Main Flexbox Container */
+.container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;    
+}
+
+
+/* PAGE BODY Flexbox Container*/
+.page-body {
+    display: flex;
+    align-items: stretch;
+    flex-direction: row;
+    padding: 6vh 45px 45px 45px;
+}
+
+.col1,
+.col2 {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: auto;
+    text-align: center;
+}
+
+.col1 {
+    border-right: dotted #C5C5C5 1px;
+    padding-right: 7vw;
+}
+
+.col2 {
+    padding-left: 7vw;
+}
+
+
+/* FORM STYLES */
+.form-container {
+    padding: 8vh 0 0 0;  
+}
+
+.form input[type=text],
+.form input[type=checkbox],
+.form input[type=select],
+.form input[type=time]    {
+    background: transparent;
+    border: none;
+    border-bottom: 1px dashed #83A4C5;
+    color: #636262;
+    font-size: 1rem;
+    outline: none;
+    margin-bottom: 15px;
+}
+
+.form input[type=time] {
+    margin-top: 15px; /* this should match the margin-bottom value for the other .form input[]'s */
+}
+
+.form input[type=text] {
+    text-align: center;
+    width: 200px;
+}
+
+.form .dropdown {
+    background: transparent;
+    border:none;
+    border-bottom: 1px dashed #83A4C5;
+    color: #636262;
+    font-size: 1rem;
+    outline: none;
+}
+.label-day {
+    color: #636262;
+}
+.box {
+    background: transparent;
+    border:none;
+    border: 1px dashed #83A4C5;
+    color: #636262;
+    font-size: 1rem;
+    margin-bottom: 25px;
+    outline: none;
+    resize: none;
+}
+
+.btn {
+    background-color: #fff;
+    border: 2px solid #73bec8;
+    color: #73bec8;
+    font-family: 'Roboto', serif;
+    font-size: 1.2rem;
+    padding: 5px 35px;
+    width: 303px;
+ }
+
+
+/* RESPONSIVE STYLES */
+ @media (max-width: 870px) {
+    .page-body {
+        display: flex;
+        align-items: stretch;
+        flex-direction: column;
+        padding: 6vh 45px 45px 45px;
+    }
+    .header-content {
+        padding: 0 20px;
+    }
+
+    h1 {
+       font-size: 1.7rem;
+    }
+    
+    h2 {
+        font-size: 1.4em;
+    }
+
+    .col1 {
+        border-bottom: dotted #C5C5C5 1px;
+        border-right: none;
+        padding-bottom: 35px;
+        padding-right: 0;
+       
+    }
+    .col2 {
+        margin: 35px 0 0 0;
+        padding-left: 0;
+        
+    }
+
+    .footer-content {
+        padding: 5vh 7vw 0 7vw;
+        text-align: center;
+    }
+  }
+
+  @media (max-width: 375px) {
+    .page-body {
+        display: flex;
+        align-items: stretch;
+        flex-direction: column;
+        padding: 6vh 3vw 45px 3vw;
+    }
+    .header-content {
+        padding: 0 10px;
+    }
+
+    h1 {
+       font-size: 1.3rem;
+    }
+    
+    h2 {
+        font-size: 1.2em;
+    }
+
+    .col1 {
+        border-bottom: dotted #C5C5C5 1px;
+        border-right: none;
+        padding-bottom: 35px;
+        padding-right: 0;
+       
+    }
+    .col2 {
+        margin: 35px 0 0 0;
+        padding-left: 0;
+        
+    }
+
+    .btn {
+        font-size: 1rem;
+        padding: 5px 35px;
+        width: 248px;
+     }
+
+    .footer-content {
+        padding: 5vh 7vw 0 7vw;
+        text-align: center;
+    }
+  }

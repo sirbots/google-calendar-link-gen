@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Google Calendar Link Generator</title>
+    
+    <meta charset="utf-8">
+	  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Quickly create links for Google Calendar events, with timezone handling.">
+  
+    <link rel="stylesheet" href="/stylesheets/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Nunito+Sans|Roboto|Roboto+Mono|Roboto+Slab" rel="stylesheet">
+
+    <script type="text/javascript" src="/js/jquery-3.2.1.js"></script>
+    <script type="text/javascript" src="/js/clipboard.js-master/dist/clipboard.min.js"></script>
+    <script type="text/javascript" src="/js/form.js"></script>
+    <script type="text/javascript" src="/js/form-resize.js"></script>
+
+  
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5N6NMG2');</script>
+    <!-- End Google Tag Manager -->
+    
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5N6NMG2"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->   
+   
+   
+    <div class="container"><!-- main flexbox container -->
+        
+        <div class="header"><!-- item 1 in MAIN container -->
+          <div class="header-content">
+            <h1>Create a Link to a Google Calendar Event</h1>
+          </div>
+        </div>
+  
+        <div class="page-body"><!-- item 2 in MAIN container // Begin Body Container-->
+  
+          <div class="col1"><!-- left column in main container -->
+            <h2>Fill out your event details</h2>
+  
+            <div class="form-container">
+              
+<form NAME="calendarInput" ACTION="" METHOD="GET" class="form">
+    <input type="text" NAME="eventName" VALUE="Event Name">
+    <br />
+  
+    <input type="text" name="eventLocation" value="Event Location">
+    <br />
+    <select class="dropdown" name="eventMonth">
+      <option value="01">January</option>
+      <option value="02">February</option>
+      <option value="03">March</option>
+      <option value="04">April</option>
+      <option value="05">May</option>
+      <option value="06">June</option>
+      <option value="07">July</option>
+      <option value="08">August</option>
+      <option value="09">September</option>
+      <option value="10">October</option>
+      <option value="11">November</option>
+      <option value="12">December</option>
+    </select>
+    <select name="eventDay" class="dropdown">
+      <option value="01">1</option>
+      <option value="02">2</option>
+      <option value="03">3</option>
+      <option value="04">4</option>
+      <option value="05">5</option>
+      <option value="06">6</option>
+      <option value="07">7</option>
+      <option value="08">8</option>
+      <option value="09">9</option>
+      <option value="10">10</option>
+      <option value="11">11</option>
+      <option value="12">12</option>
+      <option value="13">13</option>
+      <option value="14">14</option>
+      <option value="15">15</option>
+      <option value="16">16</option>
+      <option value="17">17</option>
+      <option value="18">18</option>
+      <option value="19">19</option>
+      <option value="20">20</option>
+      <option value="21">21</option>
+      <option value="22">22</option>
+      <option value="23">23</option>
+      <option value="24">24</option>
+      <option value="25">25</option>
+      <option value="26">26</option>
+      <option value="27">27</option>
+      <option value="28">28</option>
+      <option value="29">29</option>
+      <option value="30">30</option>
+      <option value="31">31</option>
+    </select>
+    <select name="eventYear" class="dropdown">
+      <option value="2023">2023</option>
+      <option value="2024">2024</option>
+      <option value="2025">2025</option>
+      <option value="2026">2026</option>
+      <option value="2027">2027</option>
+      <option value="2028">2028</option>
+      <option value="2029">2029</option>
+      <option value="2030">2030</option>
+      <option value="2031">2031</option>
+      <option value="2032">2032</option>
+    </select>
+    <br />
+    <input class="time" id="startTime" name="eventStartTime" type="time" required="true" value="19:00">
+      to
+    <input class="time" id="endTime" name="eventEndTime" type="time" value="20:00" required="true">
+    <br />
+  
+    <span class="label label-day">All day?</span><input type="checkbox" id="allDay" value="1">
+    <br />
+    
+    <textarea class="box" name="eventDetails" cols="35" rows="5">Describe your event.</textarea>
+    <br />
+  
+    <div class="btn-container">
+      <button type="button" class="btn btn-create" onClick="writeText(this.form)">Create Link</button>
+    </div>
+            </div>
+          </div>
+  
+          <div class="col2"><!-- right column in main container -->
+            <h2>Copy your link</h2>
+                
+            <!-- output GCal link -->
+            <div class="form-container">
+              <textarea class="box" id="outputBox" type="text" name="gCalOutput" readonly cols="35" rows="5"></textarea><br>
+              <div class="btn-container">
+                <button type="button" class="btn btn-copy" data-clipboard-action="copy" data-clipboard-target="#outputBox">Copy</button>
+              </div>
+              </form>
+            </div>
+          </div>
+          </div>
+
+
+          <footer class="footer"><!-- item 3 in MAIN container -->
+            <div class="footer-content">
+                <p>Google <a href="https://www.google.com/policies/privacy/partners/">privacy &amp; terms</a>. This site is not affiliated with Google or Google Calendar. <a href="https://robertbrucecarter.com/contact/">Report bugs</a>.</p>
+            </div>
+            </footer>
+        </div>
+        </div>
+      </body>
+    </html>
+              
